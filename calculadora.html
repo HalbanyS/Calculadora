@@ -5,39 +5,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
 </head>
-<body>
-    <h1>Calculadora</h1>
-</body>
+<body bgcolor="bluegrey">
 
-<!--input´s para recibir las variables -->
-<label for="a">ingrese el primer número</label>
-<input type="number" name="a" id="a"><br>
+<h1 style="color: crimson; text-align: center;">CALCULADORA PARCIAL 2</h1>
 
-<label for="b">ingrese el segundo número</label>
-<input type="number" name="a" id="a"><br>
 
-<label for="c">ingrese el tercer número</label>
-<input type="number" name="c" id="c"><br>
+<!-- Procedimiento del problema a realizarse-->
+<p>colocaremos cantidades de nuúmeros enteros los cuales se interpretarán 
+    y se mostrará el resultado de acuerdo a la operación solicitada.</p>
 
-<!--botón de función sumar-->
-<button onclick="sumar()">sumar</button><br>
+<hr>
 
-<!--resultado-->
-<label for="resultado">resultado de la suma</label>
-<input type="number" name="resultado" id="resultado">
+<!--imput´s de las variables-->
+<label for="a" style="margin-left: 30%;">ingrese el primer número</label>
+<input type="number" id="a" name="a"><br>
 
+<hr>
+
+<label for="b" style="margin-left: 30%;">ingrese el segundo número</label>
+<input type="number" id="b" name="b"><br>
+
+<hr>
+
+<label for="c" style="margin-left: 30%;">ingrese el tercer número</label>
+<input type="number" id="c" name="c"><br>
+
+<hr>
+<!--Botones de operaciones--> 
+
+<button onclick="sumar()" style="margin-left: 20%;">Sumar</button><br>
+<button onclick="restar()" style="margin-left: 30%;">Restar</button><br>
+<button onclick="multiplicar()"style="margin-left: 40%;">multiplicar</button><br>
+<button onclick="dividir()" style="margin-left: 50%;">dividir</button><br>
+<hr>
+<!--campo de resultado final-->
+<label for="resultado"style="margin-left: 65%;">Resultado de la suma</label>
+<input type="number" id="resultado" name="resultado"
 <script>
+<script>
+     function sumar(){
 
-    function sumar(){
-        var a = document.getElementById("a").value;
-        var b = document.getElementById("b").value;
-        var c = document.getElementById("c").value;
-        var resultado;
+         // se capturan e interpretan los imput´s
+         var a = document.getElementById("a").value ;
+         var b = document.getElementById("b").value ;
+         var c = document.getElementById("c").value ;
+        
+         var resultado;
 
-        resultado a + b + c;
+         console.log ( a )
+         console.log ( b )
+         console.log ( c )
+         
+         if( a == "" ){
+             a = 0; 
+         }else{ 
+             a = parseInt( a );
+             }
+         
+         if( b == "" ){
+             b = 0; 
+         }else{ 
+             b= parseInt( b );
+             } 
 
-        document.getElementById("resultado") = resultado;
+         if( c == "" ){
+             c = 0; 
+         }else{ 
+             c = parseInt( c );
+             }
 
-    }
+         resultado = a + b + c;
+
+         //Se muestra el resultado final
+         document.getElementById("resultado").value = resultado;}
+
+         function restar(){
+
+         // se capturan e interpretan las variables 
+         var a = document.getElementById("a").value ;
+         var b = document.getElementById("b").value ;
+         var c = document.getElementById("c").value ;
+            
+            var resultado;
+
+            console.log ( a )
+            console.log ( b )
+            console.log ( c )
+            
+            if( a == "" ){
+                a = 0; 
+            }else{ 
+                a = parseInt( a );
+                }
+
+            if( b == "" ){
+                b = 0; 
+            }else{ 
+                b= parseInt( b );
+                } 
+
+            if( c == "" ){
+                c = 0; 
+            }else{ 
+                c = parseInt( c );
+                }
+
+            // se realiza la operación de resta
+            resultado = a - b - c;
+
+            //Se muestra el resultado final
+            document.getElementById("resultado").value = resultado;}
+                
+            function multiplicar(){
+
+                // se captura e interpretan los imput´s
+                var a = document.getElementById("a").value ;
+                var b = document.getElementById("b").value ;
+                var c = document.getElementById("c").value ;
+
+                var resultado;
+
+                console.log ( a )
+                console.log ( b )
+                console.log ( c )
+               
+                if( a == "" ){
+                    a = 0; 
+                }else{ 
+                    a = parseInt( a );
+                    }
+
+                if( b == "" ){
+                    b = 0; 
+                }else{ 
+                    b= parseInt( b );
+                    } 
+
+                if( c == "" ){
+                    c = 0; 
+                }else{ 
+                    c = parseInt( c );}
+
+                    // se realizar la operación de multiplicación 
+                    resultado = a * b * c;
+
+                    //se muestra el resultado final
+                    document.getElementById("resultado").value = resultado;}
+
+                    function dividir(){
+
+                        // se capturan e interpretan los imput´s de las variables 
+                        var a = document.getElementById("a").value ;
+                        var b = document.getElementById("b").value ;
+                        var c = document.getElementById("c").value ;
+
+                        var resultado;
+
+                        console.log ( a )
+                        console.log ( b )
+                        console.log ( c )
+
+                        if( a == "" ){
+                            a = 0; 
+                        }else{ 
+                            a = parseInt( a );
+                            }
+
+                        if( b == "" ){
+                            b = 0; 
+                        }else{ 
+                            b= parseInt( b );
+                            } 
+
+                        if( c == "" ){
+                            c = 0; 
+                        }else{ 
+                            c = parseInt( c );}
+
+                            // Se realizar la operación de la multiplicación
+                            resultado = a / b / c;
+
+                            //Se muestra el resultado final
+                            document.getElementById("resultado").value = resultado;}
 </script>
+</body>
 </html>
